@@ -10,9 +10,13 @@
 <body>
   <div class="container">
     <div id="quote-box">
-      <p class="quote">Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.</p>
-      <p class="source">Patrick McKenzie<span class="citation">Twitter</span><span class="year">2016</span></p>
-    </div>
+      <?php
+      include 'inc/functions.php';
+      $quote = printQuote($quotes);
+      echo "<p class='quote'>" . $quote['quote'] . "</p>";
+      echo "<p class='source'>". $quote['author'] . "<br><span class='citation'><a href='https://gist.github.com/nasrulhazim/54b659e43b1035215cd0ba1d4577ee80'>thanks to: nasrulhazim on Github</a></span></p>";
+      ?>
+      </div>
     <button id="loadQuote" onclick="window.location.reload(true)" >Show another quote</button>
   </div>
 </body>
